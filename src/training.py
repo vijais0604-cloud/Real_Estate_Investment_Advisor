@@ -149,3 +149,7 @@ with mlflow.start_run(run_name="RF_Both_Models"):
 
 joblib.dump(reg_pipeline, "models/regressor.pkl")
 joblib.dump(clf_pipeline, "models/classifier.pkl")
+joblib.dump(state_freq, "models/state_freq.pkl")
+joblib.dump(city_freq, "models/city_freq.pkl")
+joblib.dump(city_median, "models/city_median.pkl")
+
