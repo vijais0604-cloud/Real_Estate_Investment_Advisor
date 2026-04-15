@@ -93,8 +93,7 @@ Real-Estate-Investment/
 │   ├── state_freq.pkl
 │   ├── city_freq.pkl
 │   └── city_median.pkl
-├── app.py                # Streamlit UI
-├── pipeline.py           # End-to-end training & MLflow logic
+├── pipeline.py     # Streamlit UI     
 ├── src/
 │   └── training.py       # Core training scripts
 ├── requirements.txt
