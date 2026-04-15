@@ -81,12 +81,15 @@ streamlit run pipeline.py
 ## Project Structure
 
 Real-Estate-Investment/
+
 │
 ├── data/
+|
 │   ├── india_housing_prices.csv
 │   ├── final_clean_dataset.csv
 │
 ├── models/
+|
 │   ├── regressor.pkl
 │   ├── classifier.pkl
 │   ├── state_freq.pkl
@@ -103,6 +106,7 @@ Real-Estate-Investment/
 ## Installation
 
 git clone <https://github.com/vijais0604-cloud/Real_Estate_Investment_Advisor>
+
 cd Real-Estate-Investment
 
 python -m venv .venv
