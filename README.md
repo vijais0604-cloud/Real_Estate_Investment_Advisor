@@ -69,7 +69,7 @@ Model Training
 
  Run the app:
 
-      streamlit run pipeline.py
+    streamlit run pipeline.py
 
 ----
 
