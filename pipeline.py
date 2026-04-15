@@ -36,7 +36,7 @@ parking = st.selectbox("Parking", ["No", "Yes"])
 security = st.selectbox("Security", ["No", "Yes"])
 
 facing = st.selectbox("Facing", ["North", "South", "East", "West"])
-owner = st.selectbox("Owner Type", ["Dealer", "Individual"])
+owner = st.selectbox("Owner Type", ["Broker", "Owner", "Builder"])
 availability = st.selectbox("Availability", ["Ready to Move", "Under Construction"])
 
 property_type = st.selectbox("Property Type", ["Apartment", "Villa", "Plot", "House"])
@@ -50,7 +50,7 @@ availability_map = {"Ready to Move":1,"Under Construction":0}
 
 # ================= CREATE DATAFRAME =================
 
-input_data = pd.DataFrame({
+input_data = pd.DataFrame([{
     "Property_Type": property_type,
     "BHK": bhk,
     "Size_in_SqFt": size,
@@ -68,7 +68,7 @@ input_data = pd.DataFrame({
     "Facing": facing,
     "Owner_Type": owner,
     "Availability_Status": availability_map[availability],
-})
+}])
 
 # ================= FEATURE ENGINEERING =================
 

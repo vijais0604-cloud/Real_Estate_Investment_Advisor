@@ -17,11 +17,14 @@ import joblib
 # Create the directory if it doesn't exist
 os.makedirs("models", exist_ok=True)
 
+tracking_uri = os.getenv("MLFLOW_TRACKING_URI")
+mlflow.set_tracking_uri(tracking_uri)
 
+artifact_location = "file:///Users/vijais/ml_history/artifacts"
 
 df = pd.read_csv("data/india_housing_prices.csv")
 
-df = df.drop(columns=["Locality","Amenities","Year_Built"])
+df = df.drop(columns=["Locality","Amenities","Year_Built","ID"])
 
 # Ordinal encoding (safe)
 df["Furnished_Status"] = df["Furnished_Status"].map({
@@ -103,10 +106,26 @@ preprocessor = ColumnTransformer(
 )
 
 
-# Set experiment name
-mlflow.set_experiment("Real Estate Investment")
+# final_X = pd.concat([X_train, X_test])
+# final_y_reg = pd.concat([y_train_reg, y_test_reg])
+# final_y_clf = pd.concat([y_train_clf, y_test_clf])
+
+# final_X["Future_Price"] = final_y_reg
+# final_X["Good_Investment"] = final_y_clf
+
+# final_df = final_X.sort_index()
+# final_df.to_csv("data/final_clean_dataset.csv", index=False)
 
 
+experiment_name = "Real Estate Analysis" 
+
+try:
+    # This explicitly links the new name to your global artifacts folder
+    mlflow.create_experiment(name=experiment_name, artifact_location=artifact_location)
+except:
+    pass
+
+mlflow.set_experiment(experiment_name)
 
 
 # Start the parent run to group everything
@@ -147,9 +166,11 @@ with mlflow.start_run(run_name="RF_Both_Models"):
         mlflow.sklearn.log_model(clf_pipeline, artifact_path="classifier_model")
 
 
-joblib.dump(reg_pipeline, "models/regressor.pkl")
-joblib.dump(clf_pipeline, "models/classifier.pkl")
-joblib.dump(state_freq, "models/state_freq.pkl")
-joblib.dump(city_freq, "models/city_freq.pkl")
-joblib.dump(city_median, "models/city_median.pkl")
+
+
+# joblib.dump(reg_pipeline, "models/regressor.pkl")
+# joblib.dump(clf_pipeline, "models/classifier.pkl")
+# joblib.dump(state_freq, "models/state_freq.pkl")
+# joblib.dump(city_freq, "models/city_freq.pkl")
+# joblib.dump(city_median, "models/city_median.pkl")
 
