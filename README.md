@@ -5,8 +5,8 @@ A machine learning project that predicts future property prices and evaluates wh
 ----
 
 ## Project Overview
-
 This project focuses on:
+
 	•	📈 Predicting future property prices (Regression)
 	•	💡 Classifying whether a property is a good investment (Classification)
 	•	🔍 Performing feature engineering & encoding
@@ -31,6 +31,7 @@ This project focuses on:
 ## Machine Learning Pipeline
 
 Data Processing
+
 	•	Removed irrelevant columns (Locality, Amenities, Year_Built, ID)
 	•	Applied:
 	•	Ordinal encoding (Furnished, Transport, etc.)
@@ -38,6 +39,7 @@ Data Processing
 	•	Feature engineering (Investment_Score)
 
 Model Training
+
 	•	Models used:
 	•	RandomForestRegressor
 	•	RandomForestClassifier
@@ -47,8 +49,9 @@ Model Training
 
 ----
 
-## 📊 MLflow Tracking
-	•	Logs:
+## MLflow Tracking
+
+	•	Logs
 	•	Model parameters
 	•	Metrics (MSE, Accuracy)
 	•	Trained models
@@ -60,13 +63,13 @@ Model Training
 
 ## Run MLflow UI
 
-mlflow ui
+    mlflow ui
 
-##🌐 Streamlit App (Local Deployment)
+## Streamlit App (Local Deployment)
 
-Run the app:
+ Run the app:
 
-streamlit run pipeline.py
+      streamlit run pipeline.py
 
 ----
 
@@ -79,28 +82,24 @@ streamlit run pipeline.py
 ----
 
 ## Project Structure
-
+```text
 Real-Estate-Investment/
-
-│
 ├── data/
-|
 │   ├── india_housing_prices.csv
-│   ├── final_clean_dataset.csv
-│
+│   └── final_clean_dataset.csv
 ├── models/
-|
 │   ├── regressor.pkl
 │   ├── classifier.pkl
 │   ├── state_freq.pkl
 │   ├── city_freq.pkl
-│   ├── city_median.pkl
-│
-├── app.py                # Streamlit app
-├── pipeline.py          # Training + MLflow
+│   └── city_median.pkl
+├── app.py                # Streamlit UI
+├── pipeline.py           # End-to-end training & MLflow logic
+├── src/
+│   └── training.py       # Core training scripts
 ├── requirements.txt
 └── README.md
-
+```
 ----
 
 ## Installation
@@ -145,6 +144,7 @@ Synthetic/structured dataset of Indian housing properties
 	•	Engineered features:
 	•	Future_Price
 	•	Investment_Score
+
 
 ## Author
 
