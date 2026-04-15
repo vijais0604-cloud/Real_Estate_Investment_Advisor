@@ -104,48 +104,47 @@ Real-Estate-Investment/
 
 ## Installation
 
-git clone <https://github.com/vijais0604-cloud/Real_Estate_Investment_Advisor>
+    git clone <https://github.com/vijais0604-cloud/Real_Estate_Investment_Advisor>
 
-cd Real-Estate-Investment
+    cd Real-Estate-Investment
 
-python -m venv .venv
-source .venv/bin/activate  # macOS/Linux
+    python -m venv .venv
+    source .venv/bin/activate  # macOS/Linux
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 ----
 
 ## Run Training
 
-python src/training.py
+    python src/training.py
 
 ----
 
 ## Models
 
-Models are saved using joblib:
-	•	regressor.pkl
-	•	classifier.pkl
+    Models are saved using joblib:
+	    •	regressor.pkl
+	    •	classifier.pkl
 
-Preprocessing artifacts:
-	•	state_freq.pkl
-	•	city_freq.pkl
-	•	city_median.pkl
+    Preprocessing artifacts:
+        •	state_freq.pkl
+        •	city_freq.pkl
+        •	city_median.pkl
 
 ----
 
 ## Dataset
 
-Synthetic/structured dataset of Indian housing properties
-	•	Features include:
-	•	Property details
-	•	Location info
-	•	Amenities & infrastructure
-	•	Engineered features:
-	•	Future_Price
-	•	Investment_Score
+    Synthetic/structured dataset of Indian housing properties
+        •	Features include:
+        •	Property details
+        •	Location info
+        •	Amenities & infrastructure
+        •	Engineered features:
+        •	Future_Price
+        •	Investment_Score
 
 
 ## Author
-
-Vijai S    
+    Vijai S    
